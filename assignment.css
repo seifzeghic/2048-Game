@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+
+:root {
+    --Color2: #EEE4DA;
+    --Color4: #EEE1C9;
+    --color8: #F3B27A;
+    --Color16:#F69664;
+    --Color32:#F77D5F;
+    --Color64:#F7603B;
+    --Color128:#EDD073;
+    --Color256:#EDCC62;
+    --Color512:#EDC950;
+    --Color1024:#EDC53F;
+    --Color2048:#EDC22E;
+}
+
+body {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    gap: 10px;
+    background-color: #FAF8EF;
+    height: 100%
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.logo {
+    font-weight: bolder;
+    font-size:50px;
+    flex: 1;
+    padding-top: 5px;
+}
+
+.logo a {
+    color: #776E65;
+    text-decoration: none;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    color: #D9D5CC;
+}
+
+.scores div {
+    
+    background-color: #BBADA0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100px;
+    position: relative;
+}
+
+.scores div span {
+    color: white;
+    font-weight: bolder;
+    font-size: 20px
+}
+
+.bonus {
+    position: absolute;
+    bottom: -15px;
+    font-size:xx-large;
+    color: #776E65;
+    font-weight: bolder;
+    visibility: hidden;
+}
+
+.settings {
+    color: white;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.undo, .restart {
+    background-color: #8F7A66;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.undo {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.gameContainer {
+    position: relative;
+    width: inherit;
+}
+
+.gameover {
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    color: #8F7A66;
+    font-weight: bolder;
+    font-size: 50px;
+    display: none;
+}
+
+
+.tryAgain {
+    color: white;
+    border: none;
+    background-color: #8F7A66;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px
+}
+
+/* .grids {
+    position: relative;
+} */
+
+.board {
+    display: grid;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    background-color: #BBADA0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    position: absolute;
+    /* z-index: -1 */
+}
+
+.tiles{
+    display: grid;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: #D6CDC4
+    /* position: absolute */;
+}
+.board div, .tiles div {
+    background-color: #D6CDC4;
+    color:#776E65;
+    /* padding: 10px; */
+    /* font-size: 35px; */
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board div {
+    z-index: 1;
+}
+
+.tiles div {
+    z-index: -1;
+    color:#776E65;
+    font-size: 45px;
+}
